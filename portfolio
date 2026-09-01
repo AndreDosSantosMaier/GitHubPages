@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>André Maier — Programador & Auxiliar Administrativo</title>
+<meta name="description" content="Portfólio de André Maier — auxiliar administrativo e programador. Sistemas em produção: controle de produção web + mobile e site institucional." />
+<style>
+  :root{
+    --bg:#0b0e14; --bg2:#0d1117; --card:#141a22; --line:#232b36;
+    --txt:#e6edf3; --muted:#9aa4b2; --red:#c8102e; --red-lt:#ff5470;
+    --navy:#181c2e; --green:#16a34a;
+    --maxw:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--red-lt); text-decoration:none}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+  .eyebrow{font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--red-lt); font-weight:700; margin:0 0 10px}
+  h2{font-size:1.8rem; margin:0 0 6px; letter-spacing:-.01em}
+  section{padding:68px 0; border-top:1px solid var(--line)}
+
+  /* NAV */
+  nav{position:sticky; top:0; z-index:10; background:rgba(11,14,20,.82); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px}
+  .brand{font-weight:800; letter-spacing:-.01em}
+  .brand span{color:var(--red-lt)}
+  .nav-links a{color:var(--muted); margin-left:22px; font-size:.92rem; font-weight:600}
+  .nav-links a:hover{color:var(--txt)}
+  @media(max-width:620px){.nav-links{display:none}}
+
+  /* HERO */
+  header.hero{padding:96px 0 84px; position:relative; overflow:hidden}
+  header.hero::before{content:""; position:absolute; inset:0;
+    background:radial-gradient(680px 320px at 78% -10%, rgba(200,16,46,.22), transparent 60%); pointer-events:none}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.8rem); line-height:1.05; margin:.2em 0 .1em; letter-spacing:-.02em}
+  .hero .role{font-size:1.15rem; color:var(--txt); font-weight:600}
+  .hero .role b{color:var(--red-lt)}
+  .hero .tag{display:block; text-transform:none; letter-spacing:normal; color:var(--muted); max-width:640px; margin:18px 0 30px; font-size:1.06rem; font-weight:400}
+  .btns{display:flex; flex-wrap:wrap; gap:12px}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:10px; font-weight:700; font-size:.95rem; border:1px solid var(--line); color:var(--txt); background:var(--card); transition:.15s}
+  .btn:hover{transform:translateY(-2px); border-color:var(--red-lt)}
+  .btn.primary{background:var(--red); border-color:var(--red); color:#fff}
+  .btn.primary:hover{background:#a00d24}
+  .btn svg{width:18px; height:18px; fill:currentColor}
+
+  /* PROJECTS */
+  .proj{display:grid; grid-template-columns:1.15fr .85fr; gap:0; background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-top:26px}
+  .proj + .proj{margin-top:22px}
+  .proj .info{padding:34px 34px 30px}
+  .proj .visual{position:relative; min-height:230px; display:flex; align-items:center; justify-content:center; padding:24px;
+    background:linear-gradient(135deg,#1c2230,#12161f); border-left:1px solid var(--line)}
+  .proj .visual .mono{font-weight:800; font-size:1.05rem; letter-spacing:.02em; text-align:center; color:#cdd6e2}
+  .proj .visual .mono small{display:block; color:var(--muted); font-weight:600; letter-spacing:.14em; text-transform:uppercase; font-size:.7rem; margin-top:8px}
+  .proj .visual::after{content:""; position:absolute; inset:0; background:radial-gradient(300px 160px at 30% 20%, rgba(255,84,112,.18), transparent 70%)}
+  .proj h3{margin:.35em 0 .1em; font-size:1.4rem; letter-spacing:-.01em}
+  .tag{display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:999px}
+  .tag.prod{background:rgba(22,163,74,.15); color:#5fd18b; border:1px solid rgba(22,163,74,.35)}
+  .tag.live{background:rgba(200,16,46,.15); color:var(--red-lt); border:1px solid rgba(200,16,46,.4)}
+  .proj ul{margin:16px 0 20px; padding:0; list-style:none}
+  .proj li{position:relative; padding-left:22px; margin:9px 0; color:#d3dae3}
+  .proj li::before{content:""; position:absolute; left:0; top:.62em; width:7px; height:7px; border-radius:2px; background:var(--red)}
+  .proj li b{color:#fff}
+  .chips{display:flex; flex-wrap:wrap; gap:7px; margin-top:6px}
+  .chip{font-size:.76rem; font-weight:600; color:#c4ccd6; background:#0f141c; border:1px solid var(--line); padding:5px 10px; border-radius:7px}
+  @media(max-width:760px){.proj{grid-template-columns:1fr}.proj .visual{border-left:none; border-top:1px solid var(--line); min-height:150px; order:-1}}
+
+  /* STACK */
+  .stack-group{margin:22px 0}
+  .stack-group h4{margin:0 0 10px; color:var(--muted); font-size:.82rem; letter-spacing:.12em; text-transform:uppercase}
+  .chips.big .chip{font-size:.9rem; padding:8px 14px}
+
+  /* CONTACT */
+  .contact .btns{margin-top:22px}
+  footer{padding:40px 0; text-align:center; color:var(--muted); font-size:.86rem; border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">André<span> Maier</span></div>
+    <div class="nav-links">
+      <a href="#projetos">Projetos</a>
+      <a href="#stack">Stack</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Portfólio</p>
+    <h1>André Maier</h1>
+    <p class="role"><b>Programador</b> &nbsp;·&nbsp; Auxiliar Administrativo</p>
+    <p style="color:var(--muted); font-size:.95rem; margin:.5em 0 0; font-weight:600">Técnico em Informática  &nbsp;·&nbsp; Engenharia da Computação (em curso)</p>
+    <p class="tag">Programador com formação técnica e também auxiliar administrativo — a combinação me deixa dentro da operação e capaz de construir o software que ela precisa. Sistemas em produção, do back-end ao aplicativo, do domínio ao site.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projetos">Ver projetos</a>
+      <a class="btn" href="https://www.linkedin.com/in/andré-dos-santos-maier-224442304/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/AndreDosSantosMaier" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="sobre">
+  <div class="wrap">
+    <p class="eyebrow">Sobre</p>
+    <h2>Formação técnica + visão de operação</h2>
+    <p style="color:var(--muted); max-width:760px; font-size:1.05rem">
+      Sou programador com base formada: <b style="color:var(--txt)">Técnico em informática</b> e <b style="color:var(--txt)">Engenharia da Computação (Em Andamento)</b> . Também atuo como <b style="color:var(--txt)">auxiliar administrativo</b>, o que me coloca dentro da operação — vendo de perto os problemas quais depois resolvo em código. É essa combinação de visão de negócio e capacidade técnica que faz meus projetos chegarem à produção e serem usados no convivio da empresa.
+    </p>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <p class="eyebrow">Projetos</p>
+    <h2>O que já está no ar</h2>
+
+    <!-- PROJETO 1 -->
+    <article class="proj">
+      <div class="info">
+        <span class="tag prod">Em produção</span>
+        <h3>Controle de Produção — web + mobile</h3>
+        <p style="color:var(--muted)">Plataforma que desenvolvi de ponta a ponta para tirar o controle de produção do papel: um <b style="color:#fff">painel web</b> para o setor administrativo e um <b style="color:#fff">aplicativo Android</b> para a equipe de campo.</p>
+        <ul>
+          <li><b>Registro no campo, sem internet:</b> O operador lança a produção direto no celular e o app sincroniza sozinho quando o sinal volta.</li>
+          <li><b>Nada conta sem aprovação:</b> Nenhum registro entra na produção sem a validação do administrador, promove confiabilidade de dados e facilita a consultoria.</li>
+          <li><b>Agendamento de Manutenções:</b> Gerencia automaticamente as manutenções de todas as maquinas e veiculos da empresa</li>
+          <li><b>Fechamento de mês automático:</b> KPIs e dashboards com o estado geral da produção da empresa.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Android</span>
+          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">API REST</span>
+        </div>
+      </div>
+      <!-- Para usar um print real: troque este bloco .visual por <img src="assets/controle.png" style="width:100%;height:100%;object-fit:cover"> -->
+      <div class="visual"><div class="mono">Controle de Produção<small>web · Android · em produção</small></div></div>
+    </article>
+
+    <!-- PROJETO 2 -->
+    <article class="proj">
+      <div class="info">
+        <span class="tag live">No ar</span>
+        <h3>Site institucional da empresa</h3>
+        <p style="color:var(--muted)">Desenvolvi o site institucional da empresa e cuidei de toda a infraestrutura em volta dele — do código à publicação.</p>
+        <ul>
+          <li><b>Desenvolvimento</b> do site do zero.</li>
+          <li><b>Compra e configuração do domínio próprio.</b></li>
+          <li><b>E-mails corporativos</b> configurados no domínio da empresa.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Web</span><span class="chip">Domínio próprio</span><span class="chip">DNS</span><span class="chip">E-mail corporativo</span>
+        </div>
+        <div class="btns" style="margin-top:20px">
+          <a class="btn primary" href="https://milleniumpdr.com.br" target="_blank" rel="noopener">Acessar o site &nbsp;↗</a>
+        </div>
+      </div>
+      <div class="visual"><div class="mono">milleniumpdr.com.br<small>site · domínio · e-mail</small></div></div>
+    </article>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <p class="eyebrow">Ferramentas</p>
+    <h2>Minha stack</h2>
+    <div class="stack-group">
+      <h4>Aplicativo (mobile)</h4>
+      <div class="chips big"><span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Android</span><span class="chip">Material Design 3</span></div>
+    </div>
+    <div class="stack-group">
+      <h4>Back-end</h4>
+      <div class="chips big"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">API REST</span></div>
+    </div>
+    <div class="stack-group">
+      <h4>Infraestrutura & ferramentas</h4>
+      <div class="chips big"><span class="chip">Cloudflare</span><span class="chip">Domínio / DNS</span><span class="chip">E-mail corporativo</span><span class="chip">Git</span><span class="chip">GitHub</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contato</p>
+    <h2>Vamos conversar</h2>
+    <p style="color:var(--muted)">Aberto a projetos e oportunidades. É só chamar.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:andredossantosmaier@gmail.com">Enviar e-mail</a>
+      <!-- EDITE: seu LinkedIn -->
+      <a class="btn" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/AndreDosSantosMaier" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="ano"></span> André Maier
+  <script>document.getElementById('ano').textContent=new Date().getFullYear()</script>
+</footer>
+
+</body>
+</html>
